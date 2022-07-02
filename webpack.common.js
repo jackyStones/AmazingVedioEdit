@@ -10,8 +10,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /css$/i,
-        use: ["style-loader", "css-loader", "sass-loader"] // 注意执行顺序是后往前
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      },
+      {
+        test:/\.less$/,
+        use:['style-loader','css-loader','less-loader']
       },
       {
         test: /.(png|jpg|jpeg|svg|gif)$/i,

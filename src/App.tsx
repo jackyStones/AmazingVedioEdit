@@ -1,13 +1,22 @@
 import React from 'react';
+import { Button } from 'antd';
+import { connect} from 'react-redux';
+import './index.less';
 
-const App = (props) => {
-  console.log('>>>>>>>>>>>>>>')
+const mapStateToProps = (state: any) => {
+  console.log(">>>>>>>>>>>>>state", state);
+  return {
+    state: state
+  }
+}
+
+const App = (props: any) => {
+  console.log(">>>>>>>>>>>>>>>props", props)
   return (
-    <div>
-      {/* <Header></Header> */}
-      hello, world i am xxx 23144112221
+    <div className='white'>
+      <Button>NBIHAO </Button>
     </div>
   );
 };
 
-export default App;
+export default  connect(mapStateToProps, null)(App);
